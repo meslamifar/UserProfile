@@ -1,0 +1,10 @@
+{
+  "name"         : "User Profile",
+  "version"      : "0.0.0",
+  "description"  : "LoyaltyOne Assignment.",
+  "main"         : "server.js",
+  "author"       : "Mahshad",
+  "dependencies" : {
+    "express"        : "^4.13.4"
+  }
+}
