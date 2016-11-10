@@ -1,10 +1,15 @@
 {
-  "name"         : "User Profile",
-  "version"      : "0.0.0",
-  "description"  : "LoyaltyOne Assignment.",
-  "main"         : "server.js",
-  "author"       : "Mahshad",
-  "dependencies" : {
-    "express"        : "^4.13.4"
+  "name": "userprofile",
+  "version": "0.0.0",
+  "description": "LoyaltyOne Assignment.",
+  "main": "server.js",
+  "author": "Mahshad",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.2",
+    "jshint": "^2.9.4"
   }
 }

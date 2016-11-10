@@ -1,7 +1,7 @@
-
 // server.js
-
 // set up web server ========================
+/* jshint undef: true, unused: true, node: true */
+
 var express  = require('express');
 var app      = express();                               // create our app w/ express
 
