@@ -1,13 +1,14 @@
-userProfileApp.controller('userProfileController', ['$scope', 'apiServices', function userProfileController($scope, apiServices){
+angular.module('userprofileCtrModule',[]).controller('userprofileCtr', ['$scope', 'userprofileSvc',  function userProfileController($scope, userprofileSvc){
 
-$scope.Done = function(){
+  $scope.inputReturn = null;
+  $scope.Done = function(){
 
   if (!$scope.stepThreeInput){
     alert('To clear the input, please use the clear button.');
     $scope.stepThreeInput = $scope.inputReturn;
   }
 else {
-    apiServices.queryInput.get({ input : $scope.stepThreeInput }, function(rsp){
+    userprofileSvc.queryInput.get({ input : $scope.stepThreeInput }, function(rsp){
         $scope.inputReturn = rsp.data;
         //if error happens
     }, function(err){

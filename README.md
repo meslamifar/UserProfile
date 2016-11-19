@@ -9,3 +9,7 @@ HTTP Verb: GET
 URL      : /api/userprofile/:input
 Description : Return the passed in input
 Exceptions: input param is null or white space
+
+Step 3:
+In this step, the structure of the app changed towards SPA. To run this project locally, after running npm install, copy angular, angular-route and angular-resource over to public/libs/.
+To run tests against API, run "npm test" otherwise run "npm start"

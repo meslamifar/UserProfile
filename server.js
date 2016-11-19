@@ -2,24 +2,24 @@
 // set up web server ========================
 /* jshint undef: true, unused: true, node: true */
 
+//modules
 var express  = require('express');
 var app      = express();  // create our app w/ express
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var port     = 8080;
 var userprofile = require('./api/userprofile-services.js');
 
-//the express.static middleware function to start serving the files directly
-app.use(express.static('public'));
-app.use(express.static('node_modules/angular'));
-app.use(express.static('node_modules/angular-resource'));
-//the main application page
-app.get('/', function(req, res) {
-  res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-});
 
-//returns whaever passed into the service
-app.route("/api/userprofile/:input")
-    .get(userprofile.getInput);
+app.use(bodyParser.json());
+// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+app.use(methodOverride('X-HTTP-Method-Override'));
+//the express.static middleware function to start serving the files directly
+app.use(express.static(__dirname + '/public'));
+require('./api/routes.js')(app);
+//the main application page
 
 
 //listening to port 8080
 app.listen(port);
+module.exports = app;
