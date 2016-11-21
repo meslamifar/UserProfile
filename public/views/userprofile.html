@@ -1,10 +1,22 @@
+<div style="border-radius: 5px; background-color: #f2f2f2; padding: 20px;margin-top: 30px">
+    <button ng-click="Save()" style="float:right; margin-left: 10px;">Save</button>
+    <button ng-click="Clear()" style="float:right; margin-left: 10px;">Clear</button>
+    <span style="float:right">{{SavingStatus}}</span>
+    <input type="text" placeholder="user name(mandatory)" ng-model="ViewModel.username" required/>
+    <input type="text" placeholder="city" ng-model="ViewModel.city"/>
+    <button ng-click="GetAllSubmissions()">Submit</button>
+    <div style="margin-top: 30px">
+      <input style="width:345px" type="text" ng-model="StepThreeInput"></input>
+      <button ng-click="Done()">Done</button>
+      </br>
+      <span>{{InputReturn}}</span>
+    </div>
+</div>
 <div>
-<form>
-  <label>Enter your word(s) in the box:</label>
-  <input type="text" ng-model="stepThreeInput"></input>
-  <button ng-click="Done()">Done</button>
-  <button ng-click="Clear()">Clear</button>
-</br>
-  <span>{{inputReturn}}</span>
-</form>
+  <ol>
+    <li ng-repeat="submission in ViewModel.submissions">
+      <span>{{submission.question}}</span></br>
+      <input type=text ng-model="submission.answer"></input>
+    </li>
+  </ol>
 </div>

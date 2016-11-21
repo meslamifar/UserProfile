@@ -11,22 +11,13 @@
     <script src="./js/appRoutes.js"></script>
     <script src="./js/app.js"></script>
   </head>
-  <body ng-app="userprofileApp">
+  <body>
     <header>
       <h1>hello world</h1>
     </header>
-    <div>
-
-
-        <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
-        <ul>
-            <li><a href="/userprofile">userprofile</a></li>
-        </ul>
-    </nav>
-
-    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ng-app="userprofileApp">
+      <a href="/userprofile">Go to User Profile page</a>
     <div ng-view></div>
-
-</div>
+  </div>
   </body>
 </html>
