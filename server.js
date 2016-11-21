@@ -6,17 +6,16 @@
 var express  = require('express');
 var app      = express();  // create our app w/ express
 var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
 var port     = 8080;
 var userprofile = require('./api/userprofile-services.js');
 
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost:27017/user_profile');
 
 app.use(bodyParser.json());
-// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-app.use(methodOverride('X-HTTP-Method-Override'));
 //the express.static middleware function to start serving the files directly
 app.use(express.static(__dirname + '/public'));
-require('./api/routes.js')(app);
+require('./api/routes.js')(app, __dirname);
 //the main application page
 
 
