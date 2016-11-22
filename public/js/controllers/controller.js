@@ -65,7 +65,15 @@ $scope.GetAllSubmissions = function(){
       }
       resetViewModelAndSignIn();
       $scope.ViewModel = rsp.data;
-
+      $scope.ViewModel.CityWeatherDescription = {};
+      if (rsp.data.city) {
+        userprofileSvc.queryAPIOpenWeather.get({city: rsp.data.city}, function(rsp){
+          $scope.ViewModel.CityWeatherDescription.Coord = rsp.coord;
+          $scope.ViewModel.CityWeatherDescription.Weather = rsp.weather[0].description;
+        }, function(err){
+        alert(err)
+      })
+    }
   }, function(err){
       alert(err);
   })
@@ -75,6 +83,7 @@ function resetViewModelAndSignIn(){
   $scope.InputReturn = null;
   $scope.StepThreeInput = null;
   $scope.ViewModel = {};
+
 }
 
 function createUserProfile(){

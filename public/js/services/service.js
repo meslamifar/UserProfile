@@ -9,8 +9,12 @@ return{
       { get : { method: 'GET', params: { userprofileId : ''}, verifyCache: true},
         create: {method: 'POST', params: {}, verifyCache: true},
         update: {method: 'PUT', params: { userprofileId : ''}, verifyCache: true}
+      }),
+    queryAPIOpenWeather:
+      $resource('http://api.openweathermap.org/data/2.5/weather?q=:city&appid=ada8d6c72b16f2a88e6cd7b01377fd17', {},
+      {
+        get : { method: 'GET', params: { city : ''}, verifyCache: true}
       })
     }
   }
-
 ]);

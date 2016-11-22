@@ -6,6 +6,10 @@
     <input type="text" placeholder="city" ng-model="ViewModel.city"/>
     <button ng-click="GetAllSubmissions()">Submit</button>
     <div style="margin-top: 30px">
+        <div><span>City Coordination:</span>{{ViewModel.CityWeatherDescription.Coord}}</div>
+        <div><span>City Weather Description:</span>{{ViewModel.CityWeatherDescription.Weather}}</div>
+    </div>
+    <div style="margin-top: 30px">
       <input style="width:345px" type="text" ng-model="StepThreeInput"></input>
       <button ng-click="Done()">Done</button>
       </br>
