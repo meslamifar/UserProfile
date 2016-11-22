@@ -1,4 +1,4 @@
-angular.module('userprofileCtrModule',[]).controller('userprofileCtr', ['$scope', '$q','userprofileSvc',  function userProfileController($scope, $q, userprofileSvc){
+angular.module('userprofileCtrModule',[]).controller('userprofileCtr', ['$scope', '$q', '$timeout', 'userprofileSvc',  function userProfileController($scope, $q, $timeout, userprofileSvc){
 
   $scope.InputReturn = null;
   $scope.ViewModel = {};
@@ -69,7 +69,7 @@ $scope.GetAllSubmissions = function(){
       if (rsp.data.city) {
         userprofileSvc.queryAPIOpenWeather.get({city: rsp.data.city}, function(rsp){
           $scope.ViewModel.CityWeatherDescription.Coord = rsp.coord;
-          $scope.ViewModel.CityWeatherDescription.Weather = rsp.weather[0].description;
+          $scope.ViewModel.CityWeatherDescription.Main = rsp.main;
         }, function(err){
         alert(err)
       })
@@ -125,7 +125,7 @@ function changeSavingStatus(status){
   else
     $scope.SavingStatus = 'There is an issue in saving your changes.';
 
-    setTimeout(function(){ $scope.SavingStatus = null; }, 3000);
+    $timeout(function(){ $scope.SavingStatus = null; }, 2000);
 
 }
 
