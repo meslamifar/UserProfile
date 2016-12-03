@@ -1,3 +1,4 @@
+<body>
 <div style="border-radius: 5px; background-color: #f2f2f2; padding: 20px;margin-top: 30px">
     <button ng-click="Save()" style="float:right; margin-left: 10px;">Save</button>
     <button ng-click="Clear()" style="float:right; margin-left: 10px;">Clear</button>
@@ -8,13 +9,13 @@
     <div style="margin-top: 30px">
         <div><span>City coordination longtitude:</span>{{ViewModel.CityWeatherDescription.Coord.lon}}</div>
         <div><span>City coordination latitude:</span>{{ViewModel.CityWeatherDescription.Coord.lat}}</div>
-        <div><span>City temperature:</span>{{ViewModel.CityWeatherDescription.Main.temp}}</div>
+        <div><span>City temperatures:</span>{{ViewModel.CityWeatherDescription.Main.temp}}</div>
     </div>
     <div style="margin-top: 30px">
       <input style="width:345px" type="text" ng-model="StepThreeInput"></input>
       <button ng-click="Done()">Done</button>
       </br>
-      <span>{{InputReturn}}</span>
+      <span>{{InputReturn}}</span>vvv
     </div>
 </div>
 <div>
@@ -25,3 +26,4 @@
     </li>
   </ol>
 </div>
+</body>
